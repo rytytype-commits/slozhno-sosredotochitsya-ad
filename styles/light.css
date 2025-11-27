@@ -12,6 +12,7 @@
   --secondary-color: #35343040;
 }
 
+/* Исправление для заголовков в светлой теме */
 [data-theme="light"] .hero__title {
   color: var(--heading-text);
   text-shadow: 4px 4px 0 var(--accent-color);
@@ -22,6 +23,7 @@
   text-shadow: 2px 2px 0 var(--accent-color);
 }
 
+/* Исправление для ссылок в светлой теме */
 [data-theme="light"] .content__link {
   text-shadow: 2px 2px var(--accent-color);
 }
@@ -30,6 +32,7 @@
   border-bottom: 1px solid var(--text-color);
 }
 
+/* Исправление для кнопок темы в светлой теме */
 [data-theme="light"] .header__theme-menu-button {
   color: var(--text-color);
   border-color: transparent;
@@ -42,4 +45,19 @@
 [data-theme="light"] .header__theme-menu-button_active {
   border-color: var(--text-color);
   pointer-events: none;
+}
+
+/* Исправление для текста в светлой теме */
+[data-theme="light"] .content__section-text {
+  color: var(--text-color);
+}
+
+[data-theme="light"] .content__section-title {
+  background: var(--accent-color);
+  color: var(--subtitle-color);
+}
+
+/* Исправление для галереи в светлой теме */
+[data-theme="light"] .gallery__heading {
+  color: var(--section-title-color);
 }
