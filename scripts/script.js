@@ -1,52 +1,40 @@
-(function initTheme() {
-  const theme = localStorage.getItem('theme');
-  if (theme) {
-    setTheme(theme);
-  }
-})();
-
 document.addEventListener('DOMContentLoaded', () => {
-  const currentTheme = [...document.documentElement.classList]
-    .find((cn) => cn.startsWith('theme-'))
-    ?.replace('theme-', '');
-  const themeButtons = [
-    ...document.querySelectorAll('.header__theme-menu-button'),
-  ];
-  setActiveButton(themeButtons, currentTheme);
+  const themeButtons = document.querySelectorAll('.header__theme-menu-button');
+  const body = document.body;
 
-  themeButtons.forEach((button) => {
+  themeButtons.forEach(button => {
     button.addEventListener('click', () => {
-      const chosenTheme = [...button.classList]
-        .find((cn) => cn.includes('_type_'))
-        .split('_type_')[1];
-      setTheme(chosenTheme);
-      setActiveButton(themeButtons, chosenTheme);
+      // Удаляем активный класс со всех кнопок
+      themeButtons.forEach(btn => {
+        btn.classList.remove('header__theme-menu-button_active');
+        btn.disabled = false;
+      });
+
+      // Добавляем активный класс на нажатую кнопку
+      button.classList.add('header__theme-menu-button_active');
+      button.disabled = true;
+
+      // Определяем тему
+      let theme = 'dark';
+      if (button.classList.contains('header__theme-menu-button_type_light')) {
+        theme = 'light';
+      } else if (button.classList.contains('header__theme-menu-button_type_auto')) {
+        // Авто режим - определяем по системным настройкам
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+          theme = 'light';
+        } else {
+          theme = 'dark';
+        }
+      }
+
+      // Устанавливаем тему
+      body.setAttribute('data-theme', theme);
     });
   });
-});
 
-function setTheme(theme) {
-  document.documentElement.className = '';
-  document.documentElement.classList.add(`theme-${theme}`);
-  localStorage.setItem('theme', theme);
-}
-
-function setActiveButton(buttonsArray, theme) {
-  buttonsArray.forEach((button) => {
-    button.classList.remove('header__theme-menu-button_active');
-    button.removeAttribute('disabled');
-  });
-  const target = buttonsArray.find((button) =>
-    button.classList.contains(`header__theme-menu-button_type_${theme}`)
-  );
-  if (target) {
-    target.classList.add('header__theme-menu-button_active');
-    target.setAttribute('disabled', true);
-  } else {
-    const autoButton = document.querySelector(
-      '.header__theme-menu-button_type_auto'
-    );
-    autoButton.classList.add('header__theme-menu-button_active');
-    autoButton.setAttribute('disabled', true);
+  // Инициализация темы при загрузке
+  const activeButton = document.querySelector('.header__theme-menu-button_active');
+  if (activeButton) {
+    activeButton.click();
   }
-}
+});

@@ -11,3 +11,17 @@
   --border-color: #FF0070;
   --bg-image: url(../images/cover-image-dark.png);
 }
+
+/* Светлая тема */
+[data-theme="light"] {
+  --heading-text: #FFC2E6;
+  --accent-color: #FF8DCB;
+  --text-color: #353430;
+  --bg-color: #FFF1F7;
+  --subtitle-color: #353430;
+  --section-title-color: #353430;
+  --menu-color: #353430;
+  --menu-hover-color: rgba(50, 49, 45, 0.40);
+  --border-color: #353430;
+  --bg-image: url(../images/cover-image-light.png);
+}
