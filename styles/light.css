@@ -1,18 +1,45 @@
-:root {
-  --font-family: "IBM Plex Mono", monospace;
+/* Светлая тема */
+[data-theme="light"] {
+  --bg-color: #fff1f7;
+  --text-color: #353430;
+  --subtitle-color: #353430;
   --heading-text: #ffc2e6;
   --accent-color: #ff8dcb;
   --border-color: #353430;
   --border-bottom: #353430;
-  --text-color: #353430;
-  --bg-color: #fff1f7;
-  --subtitle-color: #353430;
+  --section-title-color: #353430;
   --bg-image: url(../images/cover-image-light.png);
   --secondary-color: #35343040;
-  --section-title-color: #353430;
 }
 
-.decor-label {
-  display: none;
+[data-theme="light"] .hero__title {
+  color: var(--heading-text);
+  text-shadow: 4px 4px 0 var(--accent-color);
 }
 
+[data-theme="light"] .footer__text {
+  color: var(--heading-text);
+  text-shadow: 2px 2px 0 var(--accent-color);
+}
+
+[data-theme="light"] .content__link {
+  text-shadow: 2px 2px var(--accent-color);
+}
+
+[data-theme="light"] .content__link:hover {
+  border-bottom: 1px solid var(--text-color);
+}
+
+[data-theme="light"] .header__theme-menu-button {
+  color: var(--text-color);
+  border-color: transparent;
+}
+
+[data-theme="light"] .header__theme-menu-button:hover {
+  border-color: var(--secondary-color);
+}
+
+[data-theme="light"] .header__theme-menu-button_active {
+  border-color: var(--text-color);
+  pointer-events: none;
+}

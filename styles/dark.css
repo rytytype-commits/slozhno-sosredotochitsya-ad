@@ -1,4 +1,5 @@
-:root {
+/* Темная тема */
+[data-theme="dark"] {
   --bg-color: #000028;
   --text-color: #f1b2ce;
   --subtitle-color: #000028;
@@ -9,4 +10,36 @@
   --section-title-color: #ff0070;
   --bg-image: url(../images/cover-image-dark.png);
   --secondary-color: #ff007040;
+}
+
+[data-theme="dark"] .hero__title {
+  color: var(--heading-text);
+  text-shadow: 4px 4px 0 var(--accent-color);
+}
+
+[data-theme="dark"] .footer__text {
+  color: var(--heading-text);
+  text-shadow: 2px 2px 0 var(--accent-color);
+}
+
+[data-theme="dark"] .content__link {
+  text-shadow: 2px 2px var(--accent-color);
+}
+
+[data-theme="dark"] .content__link:hover {
+  border-bottom: 1px solid var(--text-color);
+}
+
+[data-theme="dark"] .header__theme-menu-button {
+  color: var(--text-color);
+  border-color: transparent;
+}
+
+[data-theme="dark"] .header__theme-menu-button:hover {
+  border-color: var(--secondary-color);
+}
+
+[data-theme="dark"] .header__theme-menu-button_active {
+  border-color: var(--text-color);
+  pointer-events: none;
 }
