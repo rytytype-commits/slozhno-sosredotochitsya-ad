@@ -1,27 +1,24 @@
+
 :root {
   --font-family: "IBM Plex Mono", monospace;
-  --heading-text: #DB00FF;
-  --accent-color: #FF0070;
-  --text-color: #F1B2CE;
-  --bg-color: #000028;
-  --subtitle-color: #000028;
-  --section-title-color: #FF0070;
-  --menu-color: #FF0070;
-  --menu-hover-color: rgba(255, 0, 112, 0.40);
-  --border-color: #FF0070;
-  --bg-image: url(../images/cover-image-dark.png);
+  --heading-text: #ffc2e6;
+  --accent-color: #ff8dcb;
+  --border-color: #353430;
+  --border-bottom: #353430;
+  --text-color: #353430;
+  --bg-color: #fff1f7;
+  --subtitle-color: #353430;
+  --bg-image: url(../images/cover-image-light.png);
+  --secondary-color: var(--color-black, #35343040);
+  --main-text-color: #353430;
+  --article-title-color: var(--main-text-color);
+  --section-title-color: var(--main-text-color);
+  --link-shadow: var(--title-color);
+  /* если --background-color не задана, используем fallback */
+  --rec-color: var(--background-color, transparent);
 }
 
-/* Светлая тема */
-[data-theme="light"] {
-  --heading-text: #FFC2E6;
-  --accent-color: #FF8DCB;
-  --text-color: #353430;
-  --bg-color: #FFF1F7;
-  --subtitle-color: #353430;
-  --section-title-color: #353430;
-  --menu-color: #353430;
-  --menu-hover-color: rgba(50, 49, 45, 0.40);
-  --border-color: #353430;
-  --bg-image: url(../images/cover-image-light.png);
+/* по умолчанию декор скрыт (при необходимости темы раскроют его) */
+.decor {
+  display: none;
 }

@@ -1,63 +1,42 @@
-/* Светлая тема */
-[data-theme="light"] {
-  --bg-color: #fff1f7;
-  --text-color: #353430;
-  --subtitle-color: #353430;
-  --heading-text: #ffc2e6;
+
+.page.theme_light {
+  /* сохраните этот селектор в приведённом виде.
+    Так стили написанные ниже будут иметь больший вес,
+    чем стили в медиазапросе предпочтений пользователя
+  */
   --accent-color: #ff8dcb;
+  --bg-color: #fff1f7;
+  --subtitle-color: #353430;
+  --text-color: #353430;
+  --section-title-color: #353430;
+  --article-title-color: #353430;
   --border-color: #353430;
   --border-bottom: #353430;
-  --section-title-color: #353430;
+  --section-article-text: #353430;
+  --heading-text: #ffc2e6;
   --bg-image: url(../images/cover-image-light.png);
-  --secondary-color: #35343040;
+  --secondary-color: var(--color-black, #35343040);
 }
 
-/* Исправление для заголовков в светлой теме */
-[data-theme="light"] .hero__title {
-  color: var(--heading-text);
-  text-shadow: 4px 4px 0 var(--accent-color);
+/* на самом элементе .page явно применяем фон (высший приоритет) */
+.page.theme_light {
+  background-image: var(--bg-image);
+  background-color: var(--bg-color);
 }
 
-[data-theme="light"] .footer__text {
-  color: var(--heading-text);
-  text-shadow: 2px 2px 0 var(--accent-color);
+/* контролируем видимость декора для светлой темы */
+.page.theme_light .decor {
+  display: none;
 }
 
-/* Исправление для ссылок в светлой теме */
-[data-theme="light"] .content__link {
-  text-shadow: 2px 2px var(--accent-color);
-}
+@media (min-width: 320px) and (max-width: 768px) {
+  .page.theme_light .header__title {
+    color: var(--heading-text);
+    text-shadow: 4px 4px 0px var(--accent-color);
+  }
 
-[data-theme="light"] .content__link:hover {
-  border-bottom: 1px solid var(--text-color);
-}
-
-/* Исправление для кнопок темы в светлой теме */
-[data-theme="light"] .header__theme-menu-button {
-  color: var(--text-color);
-  border-color: transparent;
-}
-
-[data-theme="light"] .header__theme-menu-button:hover {
-  border-color: var(--secondary-color);
-}
-
-[data-theme="light"] .header__theme-menu-button_active {
-  border-color: var(--text-color);
-  pointer-events: none;
-}
-
-/* Исправление для текста в светлой теме */
-[data-theme="light"] .content__section-text {
-  color: var(--text-color);
-}
-
-[data-theme="light"] .content__section-title {
-  background: var(--accent-color);
-  color: var(--subtitle-color);
-}
-
-/* Исправление для галереи в светлой теме */
-[data-theme="light"] .gallery__heading {
-  color: var(--section-title-color);
+  .page.theme_light .footer__title {
+    color: var(--heading-text);
+    text-shadow: 2px 2px 0px var(--accent-color);
+  }
 }

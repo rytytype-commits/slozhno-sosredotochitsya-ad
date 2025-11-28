@@ -1,63 +1,57 @@
-/* Темная тема */
-[data-theme="dark"] {
+.page.theme_dark {
+  /* сохраните этот селектор в приведённом виде.
+    Так стили написанные ниже будут иметь больший вес,
+    чем стили в медиазапросе предпочтений пользователя
+  */
+  --heading-text: #db00ff;
+  --section-title-color: #ff0070;
+  --font-family: "IBM Plex Mono", monospace;
   --bg-color: #000028;
+  --accent-color: #ff0070;
+  --title-color: #db00ff;
   --text-color: #f1b2ce;
   --subtitle-color: #000028;
-  --heading-text: #db00ff;
-  --accent-color: #ff0070;
   --border-color: #ff0070;
   --border-bottom: #f1b2ce;
-  --section-title-color: #ff0070;
   --bg-image: url(../images/cover-image-dark.png);
-  --secondary-color: #ff007040;
+  --secondary-color: var(--color-purple, #ff007040);
 }
 
-/* Исправление для заголовков в темной теме */
-[data-theme="dark"] .hero__title {
-  color: var(--heading-text);
-  text-shadow: 4px 4px 0 var(--accent-color);
+/* явно применяем фон на странице с темой dark (если нужно перекрыть) */
+.page.theme_dark {
+  background-image: var(--bg-image);
+  background-color: var(--bg-color);
 }
 
-[data-theme="dark"] .footer__text {
-  color: var(--heading-text);
-  text-shadow: 2px 2px 0 var(--accent-color);
+/* показываем декор для темной темы */
+.page.theme_dark .decor {
+  display: block;
 }
 
-/* Исправление для ссылок в темной теме */
-[data-theme="dark"] .content__link {
-  text-shadow: 2px 2px var(--accent-color);
-}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --title-color: #db00ff;
+    --heading-text: #db00ff;
+    --accent-color: #ff0070;
+    --section-title-color: #ff0070;
+    --article-title-color: var(--background-color);
+    --article-text-color: var(--title-shadow);
+    --subtitle-color: #000028;
+    --link-shadow: var(--title-shadow);
+    --bg-color: #000028;
+    --border-bottom: #f1b2ce;
+    --text-color: #f1b2ce;
+    --border-color: #ff0070;
+    --section-title-color: var(--title-shadow);
+    --title-decor: var(--title-shadow);
+    --rec-color: var(--title-shadow);
+    --bg-image: url(../images/cover-image-dark.png);
+    --secondary-color: var(--color-purple, #ff007040);
+    --font-family: "IBM Plex Mono", monospace;
+  }
 
-[data-theme="dark"] .content__link:hover {
-  border-bottom: 1px solid var(--text-color);
-}
-
-/* Исправление для кнопок темы в темной теме */
-[data-theme="dark"] .header__theme-menu-button {
-  color: var(--text-color);
-  border-color: transparent;
-}
-
-[data-theme="dark"] .header__theme-menu-button:hover {
-  border-color: var(--secondary-color);
-}
-
-[data-theme="dark"] .header__theme-menu-button_active {
-  border-color: var(--text-color);
-  pointer-events: none;
-}
-
-/* Исправление для текста в темной теме */
-[data-theme="dark"] .content__section-text {
-  color: var(--text-color);
-}
-
-[data-theme="dark"] .content__section-title {
-  background: var(--accent-color);
-  color: var(--subtitle-color);
-}
-
-/* Исправление для галереи в темной теме */
-[data-theme="dark"] .gallery__heading {
-  color: var(--section-title-color);
+  /* при автоматическом темном режиме показываем декор */
+  .decor {
+    display: block;
+  }
 }
