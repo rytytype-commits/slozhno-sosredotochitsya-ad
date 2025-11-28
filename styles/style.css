@@ -1,5 +1,3 @@
-
-
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
 
@@ -165,7 +163,6 @@
 .section__article__title {
   font-weight: 700;
   font-size: 18px;
-  /*margin-block-end: 10px;*/
   color: var(--subtitle-color, #000028);
   background-color: var(--accent-color, #ff0070);
 }
@@ -339,8 +336,6 @@
   line-height: 82.5%;
 }
 
-/*(min-width: 320px) and (max-width: 767px)*/
-
 @media (min-width: 320px) and (max-width: 767px) {
   .main {
     padding: 0px 10px;
@@ -377,7 +372,6 @@
 
   .header__text {
     max-width: 100%;
-    /*margin-block-end: -10px;*/
   }
 
   .decorated-zone::after {
@@ -571,7 +565,6 @@
   pointer-events: none;
 }
 
-/* Явное указание тем для переопределения */
 .page.theme_light {
   --bg-color: #fff1f7;
   --bg-image: url(../images/cover-image-light.png);

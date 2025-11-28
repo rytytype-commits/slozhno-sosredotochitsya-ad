@@ -1,4 +1,3 @@
-
 :root {
   --font-family: "IBM Plex Mono", monospace;
   --heading-text: #ffc2e6;
@@ -14,7 +13,6 @@
   --article-title-color: var(--main-text-color);
   --section-title-color: var(--main-text-color);
   --link-shadow: var(--title-color);
-  /* если --background-color не задана, используем fallback */
   --rec-color: var(--background-color, transparent);
 }
 

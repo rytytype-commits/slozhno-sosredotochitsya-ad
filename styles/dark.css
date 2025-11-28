@@ -17,12 +17,6 @@
   --secondary-color: var(--color-purple, #ff007040);
 }
 
-/* явно применяем фон на странице с темой dark (если нужно перекрыть) */
-.page.theme_dark {
-  background-image: var(--bg-image);
-  background-color: var(--bg-color);
-}
-
 /* показываем декор для темной темы */
 .page.theme_dark .decor {
   display: block;

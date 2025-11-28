@@ -1,4 +1,3 @@
-
 .page.theme_light {
   /* сохраните этот селектор в приведённом виде.
     Так стили написанные ниже будут иметь больший вес,
@@ -16,12 +15,6 @@
   --heading-text: #ffc2e6;
   --bg-image: url(../images/cover-image-light.png);
   --secondary-color: var(--color-black, #35343040);
-}
-
-/* на самом элементе .page явно применяем фон (высший приоритет) */
-.page.theme_light {
-  background-image: var(--bg-image);
-  background-color: var(--bg-color);
 }
 
 /* контролируем видимость декора для светлой темы */
