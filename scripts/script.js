@@ -4,15 +4,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Функция для установки темы
   function setTheme(theme) {
-    // Удаляем все темы
     page.classList.remove('theme_light', 'theme_dark');
     
-    // Добавляем выбранную тему
     if (theme !== 'auto') {
       page.classList.add(`theme_${theme}`);
     }
     
-    // Сохраняем в localStorage
     localStorage.setItem('theme', theme);
   }
 
@@ -54,7 +51,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Загрузка темы из localStorage или установка авто-режима
   const savedTheme = localStorage.getItem('theme') || 'auto';
   const activeButton = document.querySelector(`.header__theme-menu-button_type_${savedTheme === 'auto' ? 'auto' : savedTheme}`);
   
