@@ -1,0 +1,1 @@
+https://github.com/rytytype-commits/slozhno-sosredotochitsya-ad
